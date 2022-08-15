@@ -86,6 +86,14 @@
                                     <action selector="signup:" destination="JdF-eS-bam" eventType="touchUpInside" id="TJk-Gg-O5Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iss-cQ-oFz">
+                                <rect key="frame" x="177" y="813" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="details"/>
+                                <connections>
+                                    <action selector="details:" destination="JdF-eS-bam" eventType="touchUpInside" id="LlE-Ie-jcd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7hO-q7-9x1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

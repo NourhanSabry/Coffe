@@ -22,6 +22,13 @@ class ViewControllerLogin: UIViewController {
     }
     
  
+    @IBAction func details(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+               let detailsVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerdetails") as! ViewControllerdetails
+        
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+            }
     @IBAction func signup(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "register", bundle: nil)
