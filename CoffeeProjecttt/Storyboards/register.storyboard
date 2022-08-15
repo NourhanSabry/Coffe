@@ -161,6 +161,7 @@
                     </view>
                     <connections>
                         <outlet property="signin" destination="3rQ-1y-K62" id="wIm-8C-D7h"/>
+                        <outlet property="signupp" destination="Kyf-YG-POV" id="kgP-hu-upb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

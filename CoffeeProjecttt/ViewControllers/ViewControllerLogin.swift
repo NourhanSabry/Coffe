@@ -9,12 +9,14 @@ import UIKit
 
 class ViewControllerLogin: UIViewController {
 
+    @IBOutlet weak var logo: UIImageView!
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var login: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
+        
+        logo.layer.cornerRadius = 140
+        login.layer.cornerRadius = 10    }
     
     @IBAction func login(_ sender: Any) {
     }

@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7wH-cb-87t">
-                                <rect key="frame" x="20" y="431" width="147.5" height="34"/>
+                                <rect key="frame" x="20" y="431" width="365.5" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCH-s2-ZXR">
                                         <rect key="frame" x="0.0" y="0.0" width="95.5" height="34"/>
@@ -33,14 +33,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y0A-TD-jBM">
-                                        <rect key="frame" x="115.5" y="0.0" width="32" height="34"/>
+                                        <rect key="frame" x="115.5" y="0.0" width="250" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="KCJ-FD-OLO"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1zp-kt-eqm">
-                                <rect key="frame" x="20" y="504" width="142" height="34"/>
+                                <rect key="frame" x="20" y="504" width="360" height="34"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYB-T2-TZ7">
                                         <rect key="frame" x="0.0" y="0.0" width="90" height="34"/>
@@ -49,7 +52,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cq5-de-4ZJ">
-                                        <rect key="frame" x="110" y="0.0" width="32" height="34"/>
+                                        <rect key="frame" x="110" y="0.0" width="250" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="250" id="5tH-CD-KEo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -100,6 +106,7 @@
                     </view>
                     <connections>
                         <outlet property="login" destination="hDu-WU-bQa" id="gEQ-GO-dl2"/>
+                        <outlet property="logo" destination="J6p-ey-IdS" id="yt6-zM-qxW"/>
                         <outlet property="signup" destination="F0A-If-ZIk" id="zjb-TO-ZDL"/>
                     </connections>
                 </viewController>

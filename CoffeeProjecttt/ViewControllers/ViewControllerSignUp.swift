@@ -9,12 +9,12 @@ import UIKit
 
 class ViewControllerSignUp: UIViewController {
 
+    @IBOutlet weak var signupp: UIButton!
     @IBOutlet weak var signin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
+        signupp.layer.cornerRadius = 10    }
     
 
     @IBAction func signin(_ sender: Any) {
