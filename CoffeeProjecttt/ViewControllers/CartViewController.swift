@@ -7,19 +7,14 @@
 
 import UIKit
 
-struct CoffeeModel {
-   var name: String
-    var price: Double
-    var image: UIImage
-    
-}
+
 
 class CartViewController: UIViewController {
-    
+    var test4: Products?
     @IBOutlet weak var checkOut: UIButton!
     
     @IBOutlet weak var CartTable: UITableView!
-    var dataArray = [CoffeeModel]()
+    var dataArray = [Products]()
     
     
     
@@ -29,14 +24,21 @@ class CartViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-      //  CartTable.delegate = self
+      CartTable.delegate = self
         CartTable.dataSource = self
         
-        dataArray.append(CoffeeModel.init(name: "Espresso",price: 22 ,image: UIImage(named: "espresso")!))
+        for test4 in products{
+            if (test4.isAddedToCart == true){
+                dataArray.append(test4)
+                
+            }
+        }
+        
+      /*  dataArray.append(CoffeeModel.init(name: "Espresso",price: 22 ,image: UIImage(named: "espresso")!))
         dataArray.append(CoffeeModel.init(name: "Cappuccino",price: 40 ,image: UIImage(named: "cappuccino2")!))
         dataArray.append(CoffeeModel.init(name: "Macchiato", price:50 ,image: UIImage(named: "macciato")!))
         dataArray.append(CoffeeModel.init(name: "Mocha", price: 35 , image: UIImage(named: "mocha")!))
-        dataArray.append(CoffeeModel.init(name: "Latte", price: 55 , image: UIImage(named: "latte")!))
+        dataArray.append(CoffeeModel.init(name: "Latte", price: 55 , image: UIImage(named: "latte")!)) */
         
         checkOut.layer.cornerRadius = 25
     }
@@ -46,7 +48,8 @@ class CartViewController: UIViewController {
 
 }
 
-extension CartViewController: UITableViewDataSource{
+
+extension CartViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
@@ -63,6 +66,11 @@ extension CartViewController: UITableViewDataSource{
         
         
         
+    }
+    func tableView(_ tableView:
+    UITableView, heightForRowAt
+        indexPath: IndexPath) -> CGFloat{
+        return 150
     }
     
     

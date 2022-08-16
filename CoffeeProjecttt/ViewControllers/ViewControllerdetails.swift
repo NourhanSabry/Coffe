@@ -10,7 +10,7 @@ import UIKit
 class ViewControllerdetails: UIViewController {
     var dataController: NavigationProtocal!
     var coffff: Coffee?
-    
+    var test3: Products?
     
     @IBOutlet weak var addToCart: UIButton!
     
@@ -53,7 +53,15 @@ class ViewControllerdetails: UIViewController {
 //Data passing with outlets
         name2.text = coffff?.name
         img3.image = coffff?.photo
-      
+        
+        for test3 in products {
+            if(name2.text == test3.name){
+                price2.text = String(test3.price)
+                break
+            }
+            
+        }
+    
     }
     
 
@@ -66,10 +74,10 @@ class ViewControllerdetails: UIViewController {
         if(n >= 1){
             n = n - 1
             count2.text = String(n)
-        }
-        var p = Int(price2.text!) ?? -1
-         p = p * n
-         TotalPrice.text = String(p)
+            var p = Double(price2.text!) ?? -1
+             p = p * Double(n)
+             TotalPrice.text = String(p)        }
+        
         }
     
 
@@ -79,12 +87,12 @@ class ViewControllerdetails: UIViewController {
         if(n >= 0){
             n = n + 1
             count2.text = String(n)
-            
+            var p = Double(price2.text!) ?? -1
+            p = p * Double(n)
+            TotalPrice.text = String(p)
         }
         
-       var p = Int(price2.text!) ?? -1
-        p = p * n
-        TotalPrice.text = String(p)
+     
     }
     
     
@@ -95,7 +103,7 @@ class ViewControllerdetails: UIViewController {
         btn2.isSelected = false
         btn3.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
          p = p + 2
          TotalPrice.text = String(p)
     }
@@ -106,7 +114,7 @@ class ViewControllerdetails: UIViewController {
         btn2.isSelected = true
         btn3.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 4
         TotalPrice.text = String(p)    }
     
@@ -116,7 +124,7 @@ class ViewControllerdetails: UIViewController {
         btn2.isSelected = false
         btn3.isSelected = true
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 6
         TotalPrice.text = String(p)    }
     
@@ -127,7 +135,7 @@ class ViewControllerdetails: UIViewController {
         btn6.isSelected = false
         btn7.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 0
         TotalPrice.text = String(p)    }
     
@@ -138,7 +146,7 @@ class ViewControllerdetails: UIViewController {
         btn6.isSelected = false
         btn7.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 2
         TotalPrice.text = String(p)    }
     
@@ -149,7 +157,7 @@ class ViewControllerdetails: UIViewController {
         btn6.isSelected = true
         btn7.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 4
         TotalPrice.text = String(p)    }
     
@@ -160,7 +168,7 @@ class ViewControllerdetails: UIViewController {
         btn6.isSelected = false
         btn7.isSelected = true
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 6
         TotalPrice.text = String(p)
     }
@@ -169,7 +177,7 @@ class ViewControllerdetails: UIViewController {
         btn8.isSelected = true
         btn9.isSelected = false
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 6
         TotalPrice.text = String(p)            }
     
@@ -178,7 +186,7 @@ class ViewControllerdetails: UIViewController {
         btn8.isSelected = false
         btn9.isSelected = true
         
-        var p = Int(TotalPrice.text!) ?? -1
+        var p = Double(TotalPrice.text!) ?? -1
         p = p + 4
         TotalPrice.text = String(p)
         
@@ -187,6 +195,35 @@ class ViewControllerdetails: UIViewController {
     
     @IBAction func cart(_ sender: Any) {
          dataController.update()
+        
+        for test3 in products{
+            if (name2.text == test3.name){
+                test3.isAddedToCart = true
+               var nn = Int(count2.text!) ?? -1
+               test3.itemsBought = Int32(nn)
+                
+                
+            }
+        }
+        
+        
+    }
+        
+        
+        
+        
+        
+        
+        //update change logic
+    /*    let item = self.coffff
+        let storyboard = UIStoryboard(name: "cart", bundle: nil)
+        let vc = storyboard.instantiateViewController(identifier: "CartViewController") as! CartViewController */
+        
+    //    vc.coffff = item
+    //    vc.dataController = self
+    //    self.present(vc, animated: true, completion: nil)
+        
+        
             
 }
-}
+

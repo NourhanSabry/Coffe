@@ -7,6 +7,12 @@
 
 import UIKit
 
+struct CoffeeModel {
+   var image: UIImage
+    var price: Double
+    var name: String
+}
+
 class CartTableViewCell: UITableViewCell {
     
     @IBOutlet weak var coffeeImage: UIImageView!
@@ -49,9 +55,9 @@ class CartTableViewCell: UITableViewCell {
         
     }
     }
-    func setupCell(Model: CoffeeModel){
+    func setupCell(Model: Products){
         
-        coffeeImage.image = Model.image
+        coffeeImage.image = Model.image as! UIImage
         coffeeName.text = Model.name
         coffeePrice.text = String(Model.price)
         

@@ -86,10 +86,18 @@
                                     <action selector="signup:" destination="JdF-eS-bam" eventType="touchUpInside" id="TJk-Gg-O5Y"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSC-os-ZOs">
+                                <rect key="frame" x="177" y="798" width="47" height="30"/>
+                                <state key="normal" title="Details"/>
+                                <connections>
+                                    <action selector="Details:" destination="JdF-eS-bam" eventType="touchUpInside" id="T6e-cr-yxg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7hO-q7-9x1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7hO-q7-9x1" firstAttribute="trailing" secondItem="HSC-os-ZOs" secondAttribute="trailing" constant="190" id="55H-E8-lBP"/>
                             <constraint firstItem="1zp-kt-eqm" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="20" id="70A-h0-GNz"/>
                             <constraint firstItem="F0A-If-ZIk" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="112" id="Edj-RE-q9Y"/>
                             <constraint firstItem="hDu-WU-bQa" firstAttribute="top" secondItem="1zp-kt-eqm" secondAttribute="bottom" constant="94" id="L5H-CG-H5r"/>
@@ -97,11 +105,13 @@
                             <constraint firstItem="F0A-If-ZIk" firstAttribute="top" secondItem="hDu-WU-bQa" secondAttribute="bottom" constant="50" id="P8q-cC-bAr"/>
                             <constraint firstItem="7wH-cb-87t" firstAttribute="top" secondItem="J6p-ey-IdS" secondAttribute="bottom" constant="81" id="TvD-iL-iub"/>
                             <constraint firstItem="7hO-q7-9x1" firstAttribute="trailing" secondItem="J6p-ey-IdS" secondAttribute="trailing" constant="67" id="Ucd-Lc-66k"/>
+                            <constraint firstItem="HSC-os-ZOs" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="177" id="VrG-uA-j4F"/>
                             <constraint firstItem="7wH-cb-87t" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="20" id="YtW-cB-aqi"/>
                             <constraint firstItem="hDu-WU-bQa" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="20" id="ZgB-ix-o0T"/>
                             <constraint firstItem="7hO-q7-9x1" firstAttribute="trailing" secondItem="F0A-If-ZIk" secondAttribute="trailing" constant="112" id="b5v-Md-TNl"/>
                             <constraint firstItem="1zp-kt-eqm" firstAttribute="top" secondItem="7wH-cb-87t" secondAttribute="bottom" constant="39" id="gRP-p0-6vR"/>
                             <constraint firstItem="J6p-ey-IdS" firstAttribute="leading" secondItem="7hO-q7-9x1" secondAttribute="leading" constant="67" id="mVw-kq-1pH"/>
+                            <constraint firstItem="HSC-os-ZOs" firstAttribute="top" secondItem="F0A-If-ZIk" secondAttribute="bottom" constant="32" id="ney-eV-5va"/>
                         </constraints>
                     </view>
                     <connections>

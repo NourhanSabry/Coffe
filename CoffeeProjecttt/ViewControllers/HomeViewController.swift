@@ -13,6 +13,8 @@ protocol NavigationProtocal{
 }
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var test5: Products?
+    var TotalProducts = 0
     
     @IBOutlet weak var count1: UILabel!
     
@@ -50,6 +52,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.navigationController?.pushViewController(detailsVC, animated: true)
         
+    
         
     }
     
@@ -78,12 +81,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        return 100
    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //var price: Products?
         let item = arrCoffee[indexPath.row]
+        var namee = item.name
         let storyboard = UIStoryboard(name: "Details", bundle: nil)
         let vc = storyboard.instantiateViewController(identifier: "ViewControllerdetails") as! ViewControllerdetails
         
         vc.coffff = item
         vc.dataController = self
+        
         self.present(vc, animated: true, completion: nil)
         
     //    self.performSegue(withIdentifier: "Details", sender: item)
@@ -101,11 +107,13 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 extension HomeViewController: NavigationProtocal{
     
     func update(){
-        var n = Int(count1.text!) ?? -1
-        if(n >= 0){
-            n = n + 1
-            count1.text = String(n)
-        }
-        
+        for test5 in products{
+            if (test5.isAddedToCart == true){
+                TotalProducts = TotalProducts + Int(test5.itemsBought)
+                
+            }
+            
+                
 }
+        count1.text = String(TotalProducts)}
 }
