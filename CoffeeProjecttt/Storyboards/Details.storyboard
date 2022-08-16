@@ -382,6 +382,7 @@
                     </view>
                     <connections>
                         <outlet property="TotalPrice" destination="2sn-co-LLy" id="6Dh-lH-wcm"/>
+                        <outlet property="addToCart" destination="Mqc-cD-88N" id="tfB-w6-vaJ"/>
                         <outlet property="btn1" destination="9R9-W2-axz" id="YFP-0J-x0M"/>
                         <outlet property="btn2" destination="dOY-0R-hTQ" id="8R9-rX-NQ1"/>
                         <outlet property="btn3" destination="4Tf-tz-lZA" id="hkI-kD-QIK"/>

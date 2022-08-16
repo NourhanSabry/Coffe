@@ -8,7 +8,11 @@
 import UIKit
 
 class ViewControllerdetails: UIViewController {
-    var data: NavigationProtocal!
+    var dataController: NavigationProtocal!
+    var coffff: Coffee?
+    
+    
+    @IBOutlet weak var addToCart: UIButton!
     
     @IBOutlet weak var btn1: UIButton!
     @IBOutlet weak var TotalPrice: UILabel!
@@ -44,10 +48,18 @@ class ViewControllerdetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addToCart.layer.cornerRadius = 25
+//Data passing with outlets
+        name2.text = coffff?.name
+        img3.image = coffff?.photo
       
     }
     
+
+    
+    
+
 
     @IBAction func minus2(_ sender: Any) {
         var n = Int(count2.text!) ?? -1
@@ -174,9 +186,7 @@ class ViewControllerdetails: UIViewController {
     
     
     @IBAction func cart(_ sender: Any) {
-    
-            
-          //      data.update()
+         dataController.update()
             
 }
 }

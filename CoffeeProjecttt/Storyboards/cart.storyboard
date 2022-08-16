@@ -27,7 +27,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cartCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="115" id="tp2-mQ-LWE" customClass="CartTableViewCell" customModule="CoffeeProjecttt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cartCell" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" reuseIdentifier="cartCell" rowHeight="115" id="tp2-mQ-LWE" customClass="CartTableViewCell" customModule="CoffeeProjecttt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="375" height="115"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tp2-mQ-LWE" id="emi-in-KJj">
@@ -57,11 +57,17 @@
                                                     <rect key="frame" x="99" y="73" width="20" height="22"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="minus.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="Minuss:" destination="tp2-mQ-LWE" eventType="touchUpInside" id="ZS9-XH-ToE"/>
+                                                    </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iau-eH-pFO">
                                                     <rect key="frame" x="141" y="73" width="20" height="22"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="plus.circle" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="Pluss:" destination="tp2-mQ-LWE" eventType="touchUpInside" id="AMu-w4-Tch"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPo-1Z-hXH">
                                                     <rect key="frame" x="99" y="44" width="17" height="16"/>
@@ -213,6 +219,7 @@
                     </view>
                     <connections>
                         <outlet property="CartTable" destination="96M-wp-n2T" id="8dF-Jz-ZHD"/>
+                        <outlet property="checkOut" destination="yEe-VW-Kep" id="1yG-kQ-hpo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBY-IU-PHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

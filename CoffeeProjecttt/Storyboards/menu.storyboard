@@ -85,6 +85,9 @@
                                 </constraints>
                                 <color key="tintColor" systemColor="systemBrownColor"/>
                                 <state key="normal" image="cart" catalog="system"/>
+                                <connections>
+                                    <action selector="goToCart:" destination="GxQ-XL-21j" eventType="touchUpInside" id="Cbk-3Z-sNX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wue-Sc-sTK">
                                 <rect key="frame" x="0.0" y="639" width="50" height="30"/>
@@ -102,14 +105,23 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tit-eu-bKK">
+                                <rect key="frame" x="178" y="639" width="19" height="22"/>
+                                <color key="tintColor" red="0.58039215690000001" green="0.45098039220000002" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="person" catalog="system"/>
+                                <connections>
+                                    <action selector="GOprofile:" destination="GxQ-XL-21j" eventType="touchUpInside" id="awC-o8-xaA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I4v-uK-Dyh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="tit-eu-bKK" firstAttribute="leading" secondItem="Wue-Sc-sTK" secondAttribute="trailing" constant="128" id="3c8-ry-7jr"/>
                             <constraint firstItem="Wue-Sc-sTK" firstAttribute="leading" secondItem="96M-wp-n2T" secondAttribute="leading" id="9VO-73-JRF"/>
+                            <constraint firstItem="4qk-Mv-b9S" firstAttribute="leading" secondItem="tit-eu-bKK" secondAttribute="trailing" constant="148" id="AiS-6e-8xd"/>
                             <constraint firstItem="96M-wp-n2T" firstAttribute="leading" secondItem="I4v-uK-Dyh" secondAttribute="leading" id="F8C-KG-aAJ"/>
                             <constraint firstItem="96M-wp-n2T" firstAttribute="trailing" secondItem="I4v-uK-Dyh" secondAttribute="trailing" id="Kc8-Pi-Jvc"/>
-                            <constraint firstItem="4qk-Mv-b9S" firstAttribute="leading" secondItem="Wue-Sc-sTK" secondAttribute="trailing" constant="295" id="OaO-U0-MUR"/>
                             <constraint firstItem="2lX-7l-d4m" firstAttribute="trailing" secondItem="I4v-uK-Dyh" secondAttribute="trailing" id="aOY-WB-Z5m"/>
                             <constraint firstItem="Wue-Sc-sTK" firstAttribute="top" secondItem="96M-wp-n2T" secondAttribute="bottom" constant="12" id="dsw-kH-lXj"/>
                             <constraint firstItem="96M-wp-n2T" firstAttribute="top" secondItem="I4v-uK-Dyh" secondAttribute="top" id="gZS-nh-bnf"/>
@@ -117,6 +129,7 @@
                             <constraint firstItem="2lX-7l-d4m" firstAttribute="top" secondItem="96M-wp-n2T" secondAttribute="bottom" id="k36-o5-ohN"/>
                             <constraint firstItem="I4v-uK-Dyh" firstAttribute="trailing" secondItem="4qk-Mv-b9S" secondAttribute="trailing" id="kha-19-hkN"/>
                             <constraint firstItem="I4v-uK-Dyh" firstAttribute="bottom" secondItem="2lX-7l-d4m" secondAttribute="bottom" constant="20" id="ndQ-Fe-gjW"/>
+                            <constraint firstItem="tit-eu-bKK" firstAttribute="top" secondItem="96M-wp-n2T" secondAttribute="bottom" constant="12" id="s8k-uy-m1y"/>
                             <constraint firstItem="4qk-Mv-b9S" firstAttribute="top" secondItem="96M-wp-n2T" secondAttribute="bottom" constant="10" id="tDQ-cH-vDa"/>
                         </constraints>
                     </view>
@@ -135,6 +148,7 @@
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="coffee" width="1208" height="1066"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

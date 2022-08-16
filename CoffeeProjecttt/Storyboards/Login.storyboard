@@ -57,7 +57,7 @@
                                             <constraint firstAttribute="width" constant="250" id="5tH-CD-KEo"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -86,14 +86,6 @@
                                     <action selector="signup:" destination="JdF-eS-bam" eventType="touchUpInside" id="TJk-Gg-O5Y"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iss-cQ-oFz">
-                                <rect key="frame" x="177" y="813" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="details"/>
-                                <connections>
-                                    <action selector="details:" destination="JdF-eS-bam" eventType="touchUpInside" id="LlE-Ie-jcd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7hO-q7-9x1"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -115,7 +107,9 @@
                     <connections>
                         <outlet property="login" destination="hDu-WU-bQa" id="gEQ-GO-dl2"/>
                         <outlet property="logo" destination="J6p-ey-IdS" id="yt6-zM-qxW"/>
+                        <outlet property="passwordTxT" destination="Cq5-de-4ZJ" id="nBI-Wd-tay"/>
                         <outlet property="signup" destination="F0A-If-ZIk" id="zjb-TO-ZDL"/>
+                        <outlet property="usernameTxT" destination="Y0A-TD-jBM" id="QHd-H3-5nG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S3e-yR-Lwb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

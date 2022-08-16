@@ -26,13 +26,43 @@ class CartTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        coffeeImage.layer.cornerRadius = 20
+        
     }
-
+    
+    
+    @IBAction func Minuss(_ sender: Any) {
+        
+        var n = Int(coffeeCount.text!) ?? -1
+        if(n >= 1){
+            n = n - 1
+            coffeeCount.text = String(n)
+    }
+    }
+    @IBAction func Pluss(_ sender: Any) {
+        
+        var n = Int(coffeeCount.text!) ?? -1
+        if(n >= 0){
+            n = n + 1
+            coffeeCount.text = String(n)
+        
+    }
+    }
+    func setupCell(Model: CoffeeModel){
+        
+        coffeeImage.image = Model.image
+        coffeeName.text = Model.name
+        coffeePrice.text = String(Model.price)
+        
+        
+        
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
     }
+    
 
 }
