@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewControllerdetails: UIViewController {
-    
+    var data: NavigationProtocal!
     
     @IBOutlet weak var btn1: UIButton!
     @IBOutlet weak var TotalPrice: UILabel!
@@ -55,9 +55,9 @@ class ViewControllerdetails: UIViewController {
             n = n - 1
             count2.text = String(n)
         }
-        var t = Int(TotalPrice.text!) ?? -1
-         //t = t -
-         //TotalPrice.text = String(t)
+        var p = Int(price2.text!) ?? -1
+         p = p * n
+         TotalPrice.text = String(p)
         }
     
 
@@ -82,40 +82,64 @@ class ViewControllerdetails: UIViewController {
         btn1.isSelected = true
         btn2.isSelected = false
         btn3.isSelected = false
+        
+        var p = Int(TotalPrice.text!) ?? -1
+         p = p + 2
+         TotalPrice.text = String(p)
     }
     
     @IBAction func medium(_ sender: Any) {
         
         btn1.isSelected = false
         btn2.isSelected = true
-        btn3.isSelected = false    }
+        btn3.isSelected = false
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 4
+        TotalPrice.text = String(p)    }
     
     @IBAction func large(_ sender: Any) {
         
         btn1.isSelected = false
         btn2.isSelected = false
-        btn3.isSelected = true    }
+        btn3.isSelected = true
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 6
+        TotalPrice.text = String(p)    }
     
     @IBAction func nosug(_ sender: Any) {
         
         btn4.isSelected = true
         btn5.isSelected = false
         btn6.isSelected = false
-        btn7.isSelected = false     }
+        btn7.isSelected = false
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 0
+        TotalPrice.text = String(p)    }
     
     @IBAction func sug(_ sender: Any) {
         
         btn4.isSelected = false
         btn5.isSelected = true
         btn6.isSelected = false
-        btn7.isSelected = false     }
+        btn7.isSelected = false
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 2
+        TotalPrice.text = String(p)    }
     
     @IBAction func sug2(_ sender: Any) {
         
         btn4.isSelected = false
         btn5.isSelected = false
         btn6.isSelected = true
-        btn7.isSelected = false     }
+        btn7.isSelected = false
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 4
+        TotalPrice.text = String(p)    }
     
     
     @IBAction func sug3(_ sender: Any) {
@@ -124,23 +148,35 @@ class ViewControllerdetails: UIViewController {
         btn6.isSelected = false
         btn7.isSelected = true
         
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 6
+        TotalPrice.text = String(p)
     }
     
     @IBAction func crean(_ sender: Any) {
         btn8.isSelected = true
         btn9.isSelected = false
-            }
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 6
+        TotalPrice.text = String(p)            }
     
     
     @IBAction func ice(_ sender: Any) {
         btn8.isSelected = false
         btn9.isSelected = true
+        
+        var p = Int(TotalPrice.text!) ?? -1
+        p = p + 4
+        TotalPrice.text = String(p)
+        
     }
     
     
     @IBAction func cart(_ sender: Any) {
-    }
     
-    
-    
+            
+          //      data.update()
+            
+}
 }

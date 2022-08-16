@@ -24,8 +24,8 @@ class ViewControllerLogin: UIViewController {
  
     @IBAction func details(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Details", bundle: nil)
-               let detailsVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerdetails") as! ViewControllerdetails
+        let storyboard = UIStoryboard(name: "menu", bundle: nil)
+               let detailsVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
         
         self.navigationController?.pushViewController(detailsVC, animated: true)
             }
