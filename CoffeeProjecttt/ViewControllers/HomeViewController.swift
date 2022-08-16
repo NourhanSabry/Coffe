@@ -1,0 +1,76 @@
+//
+//  HomeViewController.swift
+//  CoffeeProjecttt
+//
+//  Created by Noha Naguib on 14/08/2022.
+//
+
+import UIKit
+
+protocol NavigationProtocal{
+    func update()
+}
+
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var count1: UILabel!
+    
+    @IBOutlet weak var tableView: UITableView!
+    var arrCoffee = [Coffee]()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        arrCoffee.append(Coffee.init(name: "Espresso", photo: UIImage(named: "espresso")!))
+        arrCoffee.append(Coffee.init(name: "Cappuccino", photo: UIImage(named: "cappuccino2")!))
+        arrCoffee.append(Coffee.init(name: "Macchiato", photo: UIImage(named: "macciato")!))
+        arrCoffee.append(Coffee.init(name: "Mocha", photo: UIImage(named: "mocha")!))
+        arrCoffee.append(Coffee.init(name: "Latte", photo: UIImage(named: "latte")!))
+        
+
+    }
+    
+    
+    @IBAction func goDetails(_ sender: Any) {
+        
+        let storyboard = UIStoryboard(name: "Details", bundle: nil)
+               let detailsVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerdetails") as! ViewControllerdetails
+        
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrCoffee.count
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeTableViewCell
+        let data = arrCoffee[indexPath.row]
+        cell.setupCell(photo: data.photo, name: data.name)
+        
+        return cell
+
+    }
+   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+       return 100
+   }
+}
+struct Coffee {
+    let name : String
+    let photo : UIImage
+}
+extension HomeViewController: NavigationProtocal{
+    
+    func update(){
+        var n = Int(count1.text!) ?? -1
+        if(n > 0){
+            n = n + 1
+            count1.text = String(n)
+        }
+        
+}
+}
