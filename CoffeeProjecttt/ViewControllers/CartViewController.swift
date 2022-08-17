@@ -57,7 +57,16 @@ class CartViewController: UIViewController {
         
         checkOut.layer.cornerRadius = 25
     }
-
+    
+    
+    @IBAction func CheckOut(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+               let pVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerProfile") as! ViewControllerProfile
+        
+        self.navigationController?.pushViewController(pVC, animated: true)
+        
+    }
+    
 
    
 

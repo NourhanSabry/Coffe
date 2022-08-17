@@ -183,6 +183,9 @@
                                 <state key="normal" title="Checkout">
                                     <color key="titleColor" systemColor="systemBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="CheckOut:" destination="GxQ-XL-21j" eventType="touchUpInside" id="KjZ-2p-xeI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="I4v-uK-Dyh"/>

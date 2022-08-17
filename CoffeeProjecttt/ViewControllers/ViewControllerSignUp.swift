@@ -25,7 +25,49 @@ class ViewControllerSignUp: UIViewController {
 
         signupp.layer.cornerRadius = 10    }
     
+    @objc func handleTap()
+        {
+            passwordtxt.resignFirstResponder()
+            emailtxt.resignFirstResponder()
+        }
+       
+        func signUp()
+        {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            let newUser = Users(context: context)
+            if(passwordtxt.text != confirmtxt.text)
+            {
+                let alert = UIAlertController(title: "Alert", message: "Passwords do not match", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)
+            }
+            else
+            {
+                newUser.email = emailtxt.text
+                newUser.password = passwordtxt.text
+                
+                let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                                   let logVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerLogin") as! ViewControllerLogin
+                            
+                            self.navigationController?.pushViewController(logVC, animated: true)
 
+                
+                do
+                {
+                    try context.save()
+                      }
+                catch
+                {
+                  
+                }
+            }
+        }
+        
+    
+    @IBAction func signup(_ sender: Any) {
+        signUp()    }
+    
     @IBAction func signin(_ sender: Any) {
    
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -36,47 +78,5 @@ class ViewControllerSignUp: UIViewController {
     
     }
    
-    
-    @IBAction func signUP(_ sender: Any) {
-        if(usernametxt.text == "" || passwordtxt.text == "" || emailtxt.text == "" || confirmtxt.text == ""){
-            let alert = UIAlertController(title: "Alert", message: "Please enter missing fields", preferredStyle: .alert)
-            
-            let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alert.addAction(ok)
-            
-            present(alert, animated: true, completion: nil)
-        }
-        else{
-            
-            if(confirmtxt.text != passwordtxt.text){
-                let alert = UIAlertController(title: "Alert", message: "Passwords do not match", preferredStyle: .alert)
-                
-                let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
-                alert.addAction(ok)
-                
-                present(alert, animated: true, completion: nil)            }
-            
-           
-        }
-        let item = Users(context: context)
-        item.name = usernametxt.text
-        item.email = emailtxt.text
-        item.password = passwordtxt.text
-        users.append(item)
-        item.id = Int32(users.endIndex)
-
-        
-        do{
-            try context.save()
-            //print(item.id)
-        }
-        catch{
-            
-        }
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-               let logVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerLogin") as! ViewControllerLogin
-        
-        self.navigationController?.pushViewController(logVC, animated: true)
-        
-    }
 }
+

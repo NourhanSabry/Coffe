@@ -41,7 +41,7 @@
                                             <color key="titleColor" systemColor="tertiarySystemBackgroundColor"/>
                                         </state>
                                         <connections>
-                                            <action selector="signUP:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eZQ-cQ-ifs"/>
+                                            <action selector="signup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SMd-mn-WLh"/>
                                         </connections>
                                     </button>
                                 </subviews>

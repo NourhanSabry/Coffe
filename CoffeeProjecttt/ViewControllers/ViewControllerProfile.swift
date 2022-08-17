@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewControllerProfile: UIViewController {
 
@@ -15,7 +16,9 @@ class ViewControllerProfile: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let testt = users[users.endIndex - 1]
+       let testt = users[users.endIndex]
+        
+      
         
         profEmail.text = testt.email
         profName.text = testt.name
