@@ -15,6 +15,7 @@ struct CoffeeModel {
 
 class CartTableViewCell: UITableViewCell {
     
+    var test7: Products?
     @IBOutlet weak var coffeeImage: UIImageView!
     
     @IBOutlet weak var coffeeName: UILabel!
@@ -35,15 +36,16 @@ class CartTableViewCell: UITableViewCell {
         
         coffeeImage.layer.cornerRadius = 20
         
+       
+    
     }
-    
-    
     @IBAction func Minuss(_ sender: Any) {
         
         var n = Int(coffeeCount.text!) ?? -1
         if(n >= 1){
             n = n - 1
             coffeeCount.text = String(n)
+            
     }
     }
     @IBAction func Pluss(_ sender: Any) {
@@ -60,8 +62,9 @@ class CartTableViewCell: UITableViewCell {
         coffeeImage.image = Model.image as! UIImage
         coffeeName.text = Model.name
         coffeePrice.text = String(Model.price)
+        coffeeCount.text = String(Model.itemsBought)
         
-        
+       
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

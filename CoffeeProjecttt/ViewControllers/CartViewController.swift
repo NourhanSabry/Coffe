@@ -11,8 +11,15 @@ import UIKit
 
 class CartViewController: UIViewController {
     var test4: Products?
+    var test7: Products?
+    var cartitem: Products?
     @IBOutlet weak var checkOut: UIButton!
     
+    
+    @IBOutlet weak var subTotal: UILabel!
+    
+    @IBOutlet weak var TotalPrice: UILabel!
+    @IBOutlet weak var shipping: UILabel!
     @IBOutlet weak var CartTable: UITableView!
     var dataArray = [Products]()
     
@@ -32,8 +39,14 @@ class CartViewController: UIViewController {
                 dataArray.append(test4)
                 
             }
+            
         }
-        
+     /*   for test7 in products{
+            if (test7.isAddedToCart == true){
+                coffeeCount.text = String(test7.itemsBought)
+                
+            }
+    }*/
       /*  dataArray.append(CoffeeModel.init(name: "Espresso",price: 22 ,image: UIImage(named: "espresso")!))
         dataArray.append(CoffeeModel.init(name: "Cappuccino",price: 40 ,image: UIImage(named: "cappuccino2")!))
         dataArray.append(CoffeeModel.init(name: "Macchiato", price:50 ,image: UIImage(named: "macciato")!))
@@ -50,17 +63,32 @@ class CartViewController: UIViewController {
 
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        var subTot = 0
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
         
         let cartData = dataArray[indexPath.row]
         cell.setupCell(Model: cartData)
+        
+       // subTot = Int(subTotal.text!) ?? -1
+        for cartitem in dataArray{
+        
+        subTot = subTot + (Int(cartitem.itemsBought) * Int(cartitem.price))
+        
+        subTotal.text = String(subTot)
+        
+        }
+        
+        
+        
         
         return cell
         

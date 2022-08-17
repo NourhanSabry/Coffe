@@ -219,7 +219,10 @@
                     </view>
                     <connections>
                         <outlet property="CartTable" destination="96M-wp-n2T" id="8dF-Jz-ZHD"/>
+                        <outlet property="TotalPrice" destination="hW1-QH-n3q" id="opf-eZ-xXl"/>
                         <outlet property="checkOut" destination="yEe-VW-Kep" id="1yG-kQ-hpo"/>
+                        <outlet property="shipping" destination="4wF-ha-nUb" id="YU0-zY-Ub7"/>
+                        <outlet property="subTotal" destination="iy0-5A-RQu" id="Ouf-23-2zU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBY-IU-PHP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

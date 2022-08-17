@@ -74,7 +74,7 @@ class ViewControllerLogin: UIViewController {
             let item3 = Products(context: context)
             item3.name = "Macchiato"
             item3.price = 50
-            item3.image = UIImage(named: "macchiato")
+            item3.image = UIImage(named: "macciato")
             item3.size = 1
             item3.sugar = 0
             item3.isAddedToCart = false
