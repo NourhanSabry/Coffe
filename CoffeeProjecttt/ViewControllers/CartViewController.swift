@@ -116,7 +116,7 @@ class CartViewController: UIViewController {
 
 extension CartViewController: UITableViewDataSource, UITableViewDelegate{
     
-    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataArray.count
     }
@@ -152,6 +152,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
         
         
     }
+   
     func tableView(_ tableView:
     UITableView, heightForRowAt
         indexPath: IndexPath) -> CGFloat{

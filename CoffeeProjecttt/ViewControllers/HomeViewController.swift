@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var test5: Products?
     var TotalProducts = 0
     
-    @IBOutlet weak var count1: UILabel!
+  
     
     @IBOutlet weak var tableView: UITableView!
     var arrCoffee = [Coffee]()
@@ -115,5 +115,5 @@ extension HomeViewController: NavigationProtocal{
             
                 
 }
-        count1.text = String(TotalProducts)}
+    }
 }

@@ -20,7 +20,11 @@ class ViewControllerLogin: UIViewController {
         super.viewDidLoad()
         
         logo.layer.cornerRadius = 140
-        login.layer.cornerRadius = 10    }
+        login.layer.cornerRadius = 10
+        
+        
+        
+    }
 
     
     @objc func handleTap()
@@ -192,6 +196,7 @@ class ViewControllerLogin: UIViewController {
                 }
                 
                 signIn()
+              //  UserDefaults.standard.setValue(true, forKey: "username")
               /*  let storyboard = UIStoryboard(name: "menu", bundle: nil)
                                    let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                             

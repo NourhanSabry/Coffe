@@ -14,8 +14,10 @@ struct CoffeeModel {
 }
 
 class CartTableViewCell: UITableViewCell {
-    
+  //  var removeProduct:((IndexPath)->Void)? = nil
     var test7: Products?
+    
+    
     @IBOutlet weak var coffeeImage: UIImageView!
     
     @IBOutlet weak var coffeeName: UILabel!
@@ -39,24 +41,31 @@ class CartTableViewCell: UITableViewCell {
        
     
     }
-    @IBAction func Minuss(_ sender: Any) {
-        
-        var n = Int(coffeeCount.text!) ?? -1
-        if(n >= 1){
-            n = n - 1
-            coffeeCount.text = String(n)
-            
-    }
-    }
-    @IBAction func Pluss(_ sender: Any) {
+    
+    
+  
+    @IBAction func Plus(_ sender: UIButton) {
         
         var n = Int(coffeeCount.text!) ?? -1
         if(n >= 0){
             n = n + 1
-            coffeeCount.text = String(n)
-        
+            coffeeCount.text = String(n)    }
+    
     }
+    
+   
+    @IBAction func Minus(_ sender: UIButton) {
+        var n = Int(coffeeCount.text!) ?? -1
+        if(n >= 1){
+          n = n - 1
+          coffeeCount.text = String(n)
+         
     }
+    
+    
+    }
+    
+
     func setupCell(Model: Products){
         
         coffeeImage.image = Model.image as! UIImage
@@ -67,6 +76,8 @@ class CartTableViewCell: UITableViewCell {
        
         
     }
+    
+   
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

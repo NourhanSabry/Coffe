@@ -14,16 +14,27 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         btnGo.layer.cornerRadius = 49
-    }
+        
+       /* if UserDefaults.standard.bool(forKey: "username") == true{
+            
+            let storyboard = UIStoryboard(name: "menu", bundle: nil)
+                                let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                         
+                         self.navigationController?.pushViewController(menuVC, animated: false)
+        } */   }
     
     @IBAction func GO(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-               let loginVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerLogin") as! ViewControllerLogin
+            let storyboard = UIStoryboard(name: "Login", bundle: nil)
+                   let loginVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerLogin") as! ViewControllerLogin
+            
+            self.navigationController?.pushViewController(loginVC, animated: true)
         
-        self.navigationController?.pushViewController(loginVC, animated: true)
-    }
-    
+        
+        
+        
+   
 
 }
 
+}
