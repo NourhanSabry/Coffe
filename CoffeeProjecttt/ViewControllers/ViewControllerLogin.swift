@@ -9,7 +9,8 @@ import UIKit
 import CoreData
 
 class ViewControllerLogin: UIViewController {
-
+ 
+    var test11: Users?
     @IBOutlet weak var passwordTxT: UITextField!
     @IBOutlet weak var usernameTxT: UITextField!
     @IBOutlet weak var logo: UIImageView!
@@ -44,6 +45,7 @@ class ViewControllerLogin: UIViewController {
             } catch
             {
                 print("An error has occured")
+                
             }
         }
         
@@ -91,11 +93,13 @@ class ViewControllerLogin: UIViewController {
             var allUsers = [Users]()
                 do {
                     allUsers = try context.fetch(Users.fetchRequest())
-                    for all in allUsers{
-                        if(all.password == passwordTxT.text || all.name == usernameTxT.text)
+                    for test11 in users{
+                        if(test11.password == passwordTxT.text && test11.name == usernameTxT.text)
                         {
-                            
-                            
+                            let storyboard = UIStoryboard(name: "menu", bundle: nil)
+                                               let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                        
+                                        self.navigationController?.pushViewController(menuVC, animated: true)
                             ///
                             
                           /*  self.performSegue(withIdentifier: "HomeViewController", sender: self) */
@@ -106,6 +110,10 @@ class ViewControllerLogin: UIViewController {
                         else
                         {
                             print("User Not found")
+                            let alert = UIAlertController(title: "Alert", message: "User not found", preferredStyle: .alert)
+                            let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+                            alert.addAction(cancelAction)
+                            self.present(alert, animated: true, completion: nil)
                         }
                     }
                 } catch {
@@ -173,10 +181,10 @@ class ViewControllerLogin: UIViewController {
                      products.append(item5)
                 
                 signIn()
-                let storyboard = UIStoryboard(name: "menu", bundle: nil)
+              /*  let storyboard = UIStoryboard(name: "menu", bundle: nil)
                                    let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                             
-                            self.navigationController?.pushViewController(menuVC, animated: true)            }
+                            self.navigationController?.pushViewController(menuVC, animated: true) */           }
             
         
     @IBAction func signup(_ sender: Any) {

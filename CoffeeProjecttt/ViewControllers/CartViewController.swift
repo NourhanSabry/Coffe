@@ -60,10 +60,18 @@ class CartViewController: UIViewController {
     
     
     @IBAction func CheckOut(_ sender: Any) {
+       // dataArray = []
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
                let pVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerProfile") as! ViewControllerProfile
         
         self.navigationController?.pushViewController(pVC, animated: true)
+        
+        //should I put here a func to reset all products properties
+        
+        
+        //ipdate table -- data []
+        //update products isAddedToCart = false
+        //reload core data table
         
     }
     

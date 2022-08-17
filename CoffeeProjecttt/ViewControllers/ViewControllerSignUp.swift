@@ -35,6 +35,13 @@ class ViewControllerSignUp: UIViewController {
         {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             let newUser = Users(context: context)
+            if(passwordtxt.text == "" || usernametxt.text == "" || emailtxt.text == "" || confirmtxt.text == ""){
+                let alert = UIAlertController(title: "Alert", message: "Please enter missing fields", preferredStyle: .alert)
+                let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+                alert.addAction(cancelAction)
+                self.present(alert, animated: true, completion: nil)}
+            else{
+                
             if(passwordtxt.text != confirmtxt.text)
             {
                 let alert = UIAlertController(title: "Alert", message: "Passwords do not match", preferredStyle: .alert)
@@ -46,6 +53,8 @@ class ViewControllerSignUp: UIViewController {
             {
                 newUser.email = emailtxt.text
                 newUser.password = passwordtxt.text
+                newUser.name = usernametxt.text
+                users.append(newUser)
                 
                 let storyboard = UIStoryboard(name: "Login", bundle: nil)
                                    let logVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerLogin") as! ViewControllerLogin
@@ -62,6 +71,7 @@ class ViewControllerSignUp: UIViewController {
                   
                 }
             }
+        }
         }
         
     
