@@ -70,8 +70,9 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        var tot = 0
         var subTot = 0
+        var ship = 0
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartCell", for: indexPath) as! CartTableViewCell
         
         
@@ -88,6 +89,10 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
         }
         
         
+        ship = Int(shipping.text!) ?? -1
+        tot = Int(TotalPrice.text!) ?? -1
+        tot = tot + subTot + ship
+        TotalPrice.text = String(tot)
         
         
         return cell
