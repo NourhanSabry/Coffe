@@ -22,7 +22,7 @@ class ViewControllerSignUp: UIViewController {
     @IBOutlet weak var signin: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        hideKeyboardWhenTappedAround()
         signupp.layer.cornerRadius = 10    }
     
     @objc func handleTap()

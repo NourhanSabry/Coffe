@@ -18,7 +18,7 @@ class ViewControllerLogin: UIViewController {
     @IBOutlet weak var login: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        hideKeyboardWhenTappedAround()
         logo.layer.cornerRadius = 140
         login.layer.cornerRadius = 10
         
