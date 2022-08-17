@@ -53,15 +53,21 @@ class ViewControllerdetails: UIViewController {
 //Data passing with outlets
         name2.text = coffff?.name
         img3.image = coffff?.photo
-        
-        for test3 in products {
-            if(name2.text == test3.name){
-                price2.text = String(test3.price)
+        do{
+            let allProducts:[Products] = try context.fetch(Products.fetchRequest())
+
+        for product in allProducts {
+            if(name2.text == product.name){
+                price2.text = String(product.price)
                 break
             }
             
         }
     
+    }
+        catch{
+            
+        }
     }
     
 
@@ -196,7 +202,23 @@ class ViewControllerdetails: UIViewController {
     @IBAction func cart(_ sender: Any) {
          dataController.update()
         
-        for test3 in products{
+        do{
+            let allProducts:[Products] = try context.fetch(Products.fetchRequest())
+
+        for product in allProducts {
+            if (name2.text == product.name){
+                product.isAddedToCart = true
+               var nn = Int(count2.text!) ?? -1
+               product.itemsBought = Int32(nn)
+        }
+    
+    }
+        }
+        catch{
+            
+        }
+        
+   /*     for test3 in products{
             if (name2.text == test3.name){
                 test3.isAddedToCart = true
                var nn = Int(count2.text!) ?? -1
@@ -204,7 +226,7 @@ class ViewControllerdetails: UIViewController {
                 
                 
             }
-        }
+        }*/
         
         
     }

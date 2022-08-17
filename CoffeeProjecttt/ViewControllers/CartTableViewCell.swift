@@ -61,7 +61,7 @@ class CartTableViewCell: UITableViewCell {
         
         coffeeImage.image = Model.image as! UIImage
         coffeeName.text = Model.name
-        coffeePrice.text = String(Model.price)
+        coffeePrice.text = String(Model.price * Double(Model.itemsBought))
         coffeeCount.text = String(Model.itemsBought)
         
        

@@ -10,7 +10,7 @@ import CoreData
 
 class ViewControllerLogin: UIViewController {
  
-    var test11: Users?
+   // var test11: Users?
     @IBOutlet weak var passwordTxT: UITextField!
     @IBOutlet weak var usernameTxT: UITextField!
     @IBOutlet weak var logo: UIImageView!
@@ -29,12 +29,12 @@ class ViewControllerLogin: UIViewController {
             passwordTxT.resignFirstResponder()
         }
         
-        public func getUserID()
+   /*     public func getUserID()
         {
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
             do
             {
-                let predict = NSPredicate(format: "username = %@", "Test")
+                let predict = NSPredicate(format: "username = %@",usernameTxT.text ?? "")
                 let req: NSFetchRequest<Users> = Users.fetchRequest()
                 req.predicate = predict
                 let users2 = try context.fetch(req)
@@ -82,40 +82,46 @@ class ViewControllerLogin: UIViewController {
             {
                 print("An error has occured")
             }
-        }
+        }*/
         
        
         
         func signIn()
         {
+           var isUserFound = false
            
             let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-            var allUsers = [Users]()
+           
                 do {
-                    allUsers = try context.fetch(Users.fetchRequest())
-                    for test11 in users{
-                        if(test11.password == passwordTxT.text && test11.name == usernameTxT.text)
+                    let allUsers:[Users] = try context.fetch(Users.fetchRequest())
+                    
+                    for user in allUsers{
+                        if(user.password == passwordTxT.text && user.name == usernameTxT.text)
                         {
-                            let storyboard = UIStoryboard(name: "menu", bundle: nil)
-                                               let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                                        
-                                        self.navigationController?.pushViewController(menuVC, animated: true)
-                            ///
-                            
-                          /*  self.performSegue(withIdentifier: "HomeViewController", sender: self) */
-                            
+                            isUserFound = true
+                            let defaults = UserDefaults.standard
+                            defaults.setValue(usernameTxT.text, forKey: "username")
+                            break
+
                             
 
                         }
-                        else
-                        {
-                            print("User Not found")
-                            let alert = UIAlertController(title: "Alert", message: "User not found", preferredStyle: .alert)
-                            let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
-                            alert.addAction(cancelAction)
-                            self.present(alert, animated: true, completion: nil)
-                        }
+                        
                     }
+                    if isUserFound{
+                        let storyboard = UIStoryboard(name: "menu", bundle: nil)
+                                            let menuVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                                     
+                                     self.navigationController?.pushViewController(menuVC, animated: true)                    }
+                    else
+                    {
+                        print("User Not found")
+                        let alert = UIAlertController(title: "Alert", message: "User not found", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "Ok", style: .cancel)
+                        alert.addAction(cancelAction)
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                    
                 } catch {
                     print("an error has occured while logging in")
                 }
@@ -133,7 +139,6 @@ class ViewControllerLogin: UIViewController {
                      item.isAddedToCart = false
                      item.itemsBought = 0
                      item.id = 1
-                     products.append(item)
                      
                      let item2 = Products(context: context)
                      item2.name = "Cappuccino"
@@ -144,7 +149,6 @@ class ViewControllerLogin: UIViewController {
                      item2.isAddedToCart = false
                      item2.itemsBought = 0
                      item2.id = 2
-                     products.append(item2)
                      
                      
                      let item3 = Products(context: context)
@@ -156,7 +160,6 @@ class ViewControllerLogin: UIViewController {
                      item3.isAddedToCart = false
                      item3.itemsBought = 0
                      item3.id = 3
-                     products.append(item3)
                      
                      let item4 = Products(context: context)
                      item4.name = "Mocha"
@@ -167,7 +170,7 @@ class ViewControllerLogin: UIViewController {
                      item4.isAddedToCart = false
                      item4.itemsBought = 0
                      item4.id = 4
-                     products.append(item4)
+                    
                      
                      let item5 = Products(context: context)
                      item5.name = "Latte"
@@ -178,7 +181,15 @@ class ViewControllerLogin: UIViewController {
                      item5.isAddedToCart = false
                      item5.itemsBought = 0
                      item5.id = 5
-                     products.append(item5)
+                   // products.append(item5)
+                do
+                {
+                    try context.save()
+                      }
+                catch
+                {
+                  print("coredataaaa")
+                }
                 
                 signIn()
               /*  let storyboard = UIStoryboard(name: "menu", bundle: nil)
@@ -198,3 +209,14 @@ class ViewControllerLogin: UIViewController {
 
 
 }
+/*extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}*/

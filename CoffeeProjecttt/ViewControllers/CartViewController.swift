@@ -36,13 +36,29 @@ class CartViewController: UIViewController {
       CartTable.delegate = self
         CartTable.dataSource = self
         
-        for test4 in products{
+        do{
+            let allProducts:[Products] = try context.fetch(Products.fetchRequest())
+
+        for product in allProducts {
+            if(product.isAddedToCart == true){
+                dataArray.append(product)
+            }
+            
+        }
+    
+    }
+        catch{
+            
+        }
+        
+        
+      /*  for test4 in products{
             if (test4.isAddedToCart == true){
                 dataArray.append(test4)
                 
             }
             
-        }
+        }*/
      /*   for test7 in products{
             if (test7.isAddedToCart == true){
                 coffeeCount.text = String(test7.itemsBought)
@@ -60,11 +76,28 @@ class CartViewController: UIViewController {
     
     
     @IBAction func CheckOut(_ sender: Any) {
-       // dataArray = []
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
+        dataArray.removeAll()
+        CartTable.reloadData()
+        
+        do{
+            let allProducts:[Products] = try context.fetch(Products.fetchRequest())
+
+        for product in allProducts {
+            if(product.isAddedToCart == true){
+                product.isAddedToCart = false
+                product.itemsBought = 0            }
+            
+        }
+    
+    }
+        catch{
+            
+        }
+        
+      /*  let storyboard = UIStoryboard(name: "Profile", bundle: nil)
                let pVC = storyboard.instantiateViewController(withIdentifier: "ViewControllerProfile") as! ViewControllerProfile
         
-        self.navigationController?.pushViewController(pVC, animated: true)
+        self.navigationController?.pushViewController(pVC, animated: true)*/
         
         //should I put here a func to reset all products properties
         
