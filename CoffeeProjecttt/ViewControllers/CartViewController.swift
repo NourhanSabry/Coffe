@@ -15,11 +15,13 @@ class CartViewController: UIViewController {
     var cartitem: Products?
     @IBOutlet weak var checkOut: UIButton!
     
+    @IBOutlet weak var shipping: UILabel!
+   
     
     @IBOutlet weak var subTotal: UILabel!
     
     @IBOutlet weak var TotalPrice: UILabel!
-    @IBOutlet weak var shipping: UILabel!
+    
     @IBOutlet weak var CartTable: UITableView!
     var dataArray = [Products]()
     
@@ -91,7 +93,7 @@ extension CartViewController: UITableViewDataSource, UITableViewDelegate{
         
         ship = Int(shipping.text!) ?? -1
         tot = Int(TotalPrice.text!) ?? -1
-        tot = tot + subTot + ship
+        tot = subTot + ship
         TotalPrice.text = String(tot)
         
         
