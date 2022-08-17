@@ -26,7 +26,7 @@
                                 <rect key="frame" x="87" y="152" width="240" height="96"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="qY7-Rq-Etl">
-                                <rect key="frame" x="37" y="355" width="220.5" height="24"/>
+                                <rect key="frame" x="37" y="383" width="220.5" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgT-08-1yT">
                                         <rect key="frame" x="0.0" y="0.0" width="95.5" height="24"/>
@@ -43,20 +43,23 @@
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EhN-7d-z3e">
-                                <rect key="frame" x="20" y="590" width="374" height="70"/>
+                                <rect key="frame" x="20" y="618" width="374" height="42"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N46-yQ-hEP">
-                                        <rect key="frame" x="146" y="16" width="87" height="42"/>
+                                        <rect key="frame" x="149" y="3" width="77" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="Log Out">
                                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="logOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RpC-0I-kxK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.58039215686274503" green="0.45098039215686275" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="Oim-XO-3sa"/>
+                                    <constraint firstAttribute="height" constant="42" id="Jou-EE-TS3"/>
                                     <constraint firstAttribute="width" constant="374" id="mEt-IF-0xQ"/>
                                 </constraints>
                             </view>
@@ -67,7 +70,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="lWk-Bg-fkK">
-                                <rect key="frame" x="37" y="406" width="288" height="24"/>
+                                <rect key="frame" x="37" y="434" width="288" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rzz-jz-o1k">
                                         <rect key="frame" x="0.0" y="0.0" width="52.5" height="24"/>
@@ -110,6 +113,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="logout" destination="N46-yQ-hEP" id="fAd-Qg-wsl"/>
                         <outlet property="profEmail" destination="ilr-Nt-l2H" id="vtS-vD-VVa"/>
                         <outlet property="profName" destination="T7e-VK-gD8" id="RGk-gc-EjN"/>
                         <outlet property="profUsername" destination="Bph-Sa-qBq" id="kKd-I1-Wii"/>
